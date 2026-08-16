@@ -1,14 +1,15 @@
 {
   "name": "store-rating-platform-backend",
   "version": "1.0.0",
-  "description": "PostgreSQL database design and Prisma ORM configuration for Store Rating Platform",
-  "main": "prisma/seed.js",
+  "description": "Backend API for Store Rating Platform",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
+    "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "dev": "node src/server.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy",
     "prisma:seed": "node prisma/seed.js"
   },
   "prisma": {
@@ -25,6 +26,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "nodemon": "^3.1.10",
     "prisma": "^6.3.1",
     "supertest": "^7.2.2",
     "vitest": "^4.1.10"
